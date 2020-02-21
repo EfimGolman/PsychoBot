@@ -1,0 +1,31 @@
+{
+  "name": "psychobot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EfimGolman/PsychoBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EfimGolman/PsychoBot/issues"
+  },
+  "homepage": "https://github.com/EfimGolman/PsychoBot#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.9.1",
+    "node-telegram-bot-api": "^0.40.0",
+    "request": "^2.88.2"
+  }
+}
