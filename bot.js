@@ -23,7 +23,7 @@ const options = {
   parse_mode: 'Markdown',
   reply_markup: {
     keyboard: [
-      [{ text: 'Я на нервяке' }],
+      [{ text: 'Я на нервяке' }], 
       [{ text: 'Пройти мини-тест' }],
       [{ text: 'Пройти большой тест' }],
     ],
@@ -46,6 +46,7 @@ bot.onText(/\/start/, async (msg, match) => {
 });
 
 bot.onText(/.+/g, async (msg, match) => {
+  console.log(match)
   if (match[0] === 'Я на нервяке') {
     await bot.sendMessage(msg.from.id, 'Вообще-то, всем сейчас тяжело!');
     await bot.sendMessage(msg.from.id, 'Выбери что-то еще!');
