@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-console.log('Bot started!');
+// console.log('Bot started!');
 
 const token = process.env.DB_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
@@ -14,9 +14,9 @@ let questionItem;
 let arrayAnswers = [];
 
 bot.getMe().then((me) => {
-  console.log('Hello! My name is %s!', me.first_name);
-  console.log('My id is %s.', me.id);
-  console.log('And my username is @%s.', me.username);
+  // console.log('Hello! My name is %s!', me.first_name);
+  // console.log('My id is %s.', me.id);
+  // console.log('And my username is @%s.', me.username);
 });
 
 const options = {
@@ -46,7 +46,7 @@ bot.onText(/\/start/, async (msg, match) => {
 });
 
 bot.onText(/.+/g, async (msg, match) => {
-  console.log(match)
+  // console.log(match)
   if (match[0] === 'Я на нервяке') {
     await bot.sendMessage(msg.from.id, 'Вообще-то, всем сейчас тяжело!');
     await bot.sendMessage(msg.from.id, 'Выбери что-то еще!');
@@ -139,7 +139,7 @@ bot.onText(/.+/g, async (msg, match) => {
             },
           };
           setTimeout(async () => { await bot.sendMessage(msg.from.id, questionItem.question, options1); }, 100);
-          console.log(arrayAnswers);
+          // console.log(arrayAnswers);
         }
         break;
       }
@@ -163,7 +163,7 @@ bot.onText(/.+/g, async (msg, match) => {
             },
           };
           setTimeout(async () => { await bot.sendMessage(msg.from.id, questionItem.question, options1); }, 100);
-          console.log(arrayAnswers);
+          // console.log(arrayAnswers);
         }
         break;
       }
@@ -187,18 +187,18 @@ bot.onText(/.+/g, async (msg, match) => {
             },
           };
           setTimeout(async () => { await bot.sendMessage(msg.from.id, questionItem.question, options1); }, 100);
-          console.log(arrayAnswers);
+          // console.log(arrayAnswers);
         }
         break;
       }
 
       default: {
-        console.log('Some shit happend!');
-        console.log('MATCH', match[0]);
-        console.log('Answer1 - ', questionItem.answer1[1]);
-        console.log('Answer2 - ', questionItem.answer2[1]);
-        console.log('Answer3 - ', questionItem.answer3[1]);
-        console.log('Answer4 - ', questionItem.answer4[1]);
+        // console.log('Some shit happend!');
+        // console.log('MATCH', match[0]);
+        // console.log('Answer1 - ', questionItem.answer1[1]);
+        // console.log('Answer2 - ', questionItem.answer2[1]);
+        // console.log('Answer3 - ', questionItem.answer3[1]);
+        // console.log('Answer4 - ', questionItem.answer4[1]);
       
       }
     }
@@ -212,7 +212,7 @@ bot.onText(/.+/g, async (msg, match) => {
       res2 += +arrayAnswers[i];
     }
 
-    console.log('Тревожность:', res1, 'Депрессия:', res2);
+    // console.log('Тревожность:', res1, 'Депрессия:', res2);
     const fin = {
       parse_mode: 'Markdown',
       reply_markup: {
