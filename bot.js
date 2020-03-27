@@ -1,5 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
+require('https').createServer().listen(process.env.PORT || 5000).on('request', (req, res) => {
+  res.end('');
+});
 require('dotenv').config();
 
 // console.log('Bot started!');
@@ -23,7 +26,7 @@ const options = {
   parse_mode: 'Markdown',
   reply_markup: {
     keyboard: [
-      [{ text: 'Я на нервяке' }], 
+      [{ text: 'Я на нервяке' }],
       [{ text: 'Пройти мини-тест' }],
       [{ text: 'Пройти большой тест' }],
     ],
@@ -93,9 +96,7 @@ bot.onText(/.+/g, async (msg, match) => {
   }
   questionItem = questions[questionNumber - 1];
   if (questionItem !== undefined && questionNumber < 15) {
-
     switch (match[0]) {
-
       // CASE -  1
 
       case (questionItem.answer1[1]): {
@@ -199,7 +200,7 @@ bot.onText(/.+/g, async (msg, match) => {
         // console.log('Answer2 - ', questionItem.answer2[1]);
         // console.log('Answer3 - ', questionItem.answer3[1]);
         // console.log('Answer4 - ', questionItem.answer4[1]);
-      
+
       }
     }
   }
